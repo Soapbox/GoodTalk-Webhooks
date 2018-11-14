@@ -1,0 +1,28 @@
+{
+    "name": "soapbox/webhooks",
+    "description": "Handle webhook requests from the API",
+    "authors": [
+        {
+            "name": "Dave Wong",
+            "email": "dave@soapboxhq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/http": "^5.5",
+        "illuminate/routing": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SoapBox\\Webhooks\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SoapBox\\Webhooks\\WebhookServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
