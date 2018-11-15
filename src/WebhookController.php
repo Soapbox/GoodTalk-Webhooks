@@ -20,6 +20,6 @@ class WebhookController extends Controller
 
     private function getClass(Store $request): string
     {
-        return __NAMESPACE__ . "\\" . studly_case(str_replace('.', '_', $request->getEventType()));
+        return config('webhooks.handler_namespace') . "\\" . studly_case(str_replace('.', '_', $request->getEventType()));
     }
 }
