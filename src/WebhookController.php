@@ -9,6 +9,10 @@ class WebhookController extends Controller
 {
     public function handle(Store $request): Response
     {
+        if (!$request->isValid()) {
+            return new Response([], 422);
+        }
+
         $class = $this->getClass($request);
 
         if (class_exists($class)) {
