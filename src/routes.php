@@ -1,3 +1,5 @@
 <?php
 
-Route::post('webhook', '\SoapBox\Webhooks\WebhookController@handle');
+Route::group(['middleware' => 'verify-signature:webhooks'], function() {
+    Route::post('webhook', '\SoapBox\Webhooks\WebhookController@handle');
+});

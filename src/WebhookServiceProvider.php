@@ -18,5 +18,7 @@ class WebhookServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->make('SoapBox\Webhooks\WebhookController');
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/signed-requests.php', 'signed-requests');
     }
 }
