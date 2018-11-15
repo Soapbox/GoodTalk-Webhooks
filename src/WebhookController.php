@@ -11,8 +11,6 @@ class WebhookController extends Controller
     {
         $class = $this->getClass($request);
 
-        dd($class);
-
         if (class_exists($class)) {
             (new $class)->handle($request);
         }

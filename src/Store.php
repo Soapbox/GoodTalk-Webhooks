@@ -2,18 +2,16 @@
 
 namespace SoapBox\Webhooks;
 
-use Illuminate\Http\Request;
-
 class Store extends Request
 {
-    public function getEventType(): string
+    public function getEventType()
     {
-        return $this->input('event-type');
+        return $this->getInput('event-type');
     }
 
     public function getData(): array
     {
-        return $this->input('data');
+        return $this->getInput('data');
     }
 
     public function rules(): array

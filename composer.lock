@@ -475,16 +475,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.5.3",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d5603a1540ea9acff343f31a14ffe9849b56132a"
+                "reference": "92edfddcfe37b0d7956045d57f8ba714df8c0fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d5603a1540ea9acff343f31a14ffe9849b56132a",
-                "reference": "d5603a1540ea9acff343f31a14ffe9849b56132a",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/92edfddcfe37b0d7956045d57f8ba714df8c0fb8",
+                "reference": "92edfddcfe37b0d7956045d57f8ba714df8c0fb8",
                 "shasum": ""
             },
             "require": {
@@ -530,7 +530,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-13T14:41:34+00:00"
+            "time": "2018-11-15T06:40:11+00:00"
         },
         {
             "name": "psr/container",
@@ -973,12 +973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "5d5e673e712e0700a060d42793f2ab767e4a7d60"
+                "reference": "b5424151ee6ead2fce32ea4c065a582c69188818"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/5d5e673e712e0700a060d42793f2ab767e4a7d60",
-                "reference": "5d5e673e712e0700a060d42793f2ab767e4a7d60",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/b5424151ee6ead2fce32ea4c065a582c69188818",
+                "reference": "b5424151ee6ead2fce32ea4c065a582c69188818",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-13T16:04:17+00:00"
+            "time": "2018-11-15T12:17:10+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1179,12 +1179,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "2f9dc0a8f804a77a5799387a5d140eddca553c74"
+                "reference": "19be3f528002ddbb0e03f188c5c3285020b151f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/2f9dc0a8f804a77a5799387a5d140eddca553c74",
-                "reference": "2f9dc0a8f804a77a5799387a5d140eddca553c74",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/19be3f528002ddbb0e03f188c5c3285020b151f7",
+                "reference": "19be3f528002ddbb0e03f188c5c3285020b151f7",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1248,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-11-11T19:52:12+00:00"
+            "time": "2018-11-15T12:17:10+00:00"
         },
         {
             "name": "symfony/translation",
@@ -1256,12 +1256,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "06082c960540c1c09a07ea67cb8a07a5c79283cf"
+                "reference": "f393c2ed9e42907ea7ccd4d8f2c55b5eb30bd0c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/06082c960540c1c09a07ea67cb8a07a5c79283cf",
-                "reference": "06082c960540c1c09a07ea67cb8a07a5c79283cf",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/f393c2ed9e42907ea7ccd4d8f2c55b5eb30bd0c2",
+                "reference": "f393c2ed9e42907ea7ccd4d8f2c55b5eb30bd0c2",
                 "shasum": ""
             },
             "require": {
@@ -1321,7 +1321,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T19:52:12+00:00"
+            "time": "2018-11-14T16:25:09+00:00"
         }
     ],
     "packages-dev": [],
