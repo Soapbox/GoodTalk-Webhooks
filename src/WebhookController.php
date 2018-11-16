@@ -18,8 +18,8 @@ class WebhookController extends Controller
     {
         $class = $this->getClass($request);
 
-        if (class_exists($class)) {
-            (new $class)->handle($request);
+        if (class_exists($class) && ($handler = new $class) instanceof WebhookHandler) {
+            $handler->handle($request);
         }
 
         return new Response([], Response::HTTP_OK);
