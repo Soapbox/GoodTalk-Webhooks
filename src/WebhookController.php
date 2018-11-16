@@ -7,10 +7,17 @@ use Illuminate\Routing\Controller;
 
 class WebhookController extends Controller
 {
+    /**
+     * Handle a webhook request from the API
+     *
+     * @param Store $request
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function handle(Store $request): Response
     {
         if (!$request->isValid()) {
-            return new Response([], 422);
+            return new Response([], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $class = $this->getClass($request);
@@ -19,9 +26,16 @@ class WebhookController extends Controller
             (new $class)->handle($request);
         }
 
-        return new Response([], 200);
+        return new Response([], Response::HTTP_OK);
     }
 
+    /**
+     * Get the namespace for the class that should handle the request
+     *
+     * @param Store $request
+     *
+     * @return string
+     */
     private function getClass(Store $request): string
     {
         return config('webhooks.handler_namespace') . "\\" . studly_case(str_replace('.', '_', $request->getEventType()));

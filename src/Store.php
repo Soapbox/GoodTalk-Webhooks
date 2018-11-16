@@ -4,11 +4,21 @@ namespace SoapBox\Webhooks;
 
 class Store extends Request
 {
-    public function getEventType()
+    /**
+     * Get the event type from the request
+     *
+     * @return string
+     */
+    public function getEventType(): string
     {
         return $this->getInput('event-type');
     }
 
+    /**
+     * Get the data from the request
+     *
+     * @return array
+     */
     public function getData(): array
     {
         return $this->getInput('data');
