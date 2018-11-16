@@ -3,9 +3,8 @@
 namespace SoapBox\Webhooks;
 
 use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
 
-class WebhookController extends Controller
+class WebhookController
 {
     /**
      * Handle a webhook request from the API
