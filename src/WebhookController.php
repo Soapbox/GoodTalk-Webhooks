@@ -16,10 +16,6 @@ class WebhookController extends Controller
      */
     public function handle(Store $request): Response
     {
-        if (!$request->isValid()) {
-            return new Response([], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
         $class = $this->getClass($request);
 
         if (class_exists($class)) {

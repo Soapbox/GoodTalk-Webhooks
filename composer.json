@@ -11,6 +11,7 @@
         "php": ">=7.1",
         "illuminate/http": "^5.5",
         "illuminate/routing": "^5.5",
+        "illuminate/validation": "^5.5",
         "soapbox/signed-requests": "^2.0.0",
         "nesbot/carbon": "^1.22"
     },
@@ -25,6 +26,5 @@
                 "SoapBox\\Webhooks\\WebhookServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
