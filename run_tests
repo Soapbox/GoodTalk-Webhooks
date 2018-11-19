@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Any subsequent(*) commands which fail will cause the shell script to exit immediately
+set -e
+
+echo "################################################################################";
+echo "# Functional Tests:"
+echo "################################################################################";
+./vendor/bin/phpunit --configuration phpunit.xml --colors --testsuite Functional
+echo "################################################################################";
+echo "";
+
+#echo "################################################################################";
+#echo "# Running Integration Tests:"
+#echo "################################################################################";
+#./vendor/bin/phpunit --configuration phpunit.xml --testsuite Integration
+#echo "################################################################################";
+#echo "";
+
+#echo "################################################################################";
+#echo "# Running Unit Tests:"
+#echo "################################################################################";
+#./vendor/bin/phpunit --configuration phpunit.xml --testsuite Unit
+#echo "################################################################################";
+#echo "";
