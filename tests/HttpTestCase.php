@@ -37,6 +37,10 @@ class HttpTestCase extends BaseTestCase
             ]
         ]);
 
+        $app['config']->set('webhooks', [
+            'handler_namespace' => "Tests\\Handlers"
+        ]);
+
         Route::aliasMiddleware('verify-signature', VerifySignature::class);
 
         $app->resolving(Request::class, function ($request, $app) {
