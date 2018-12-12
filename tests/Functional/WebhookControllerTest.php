@@ -22,7 +22,7 @@ class WebhookControllerTest extends HttpTestCase
 
         $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
 
-        $this->assertSame(Response::HTTP_OK, $res->getStatusCode());
+        $res->assertStatus(Response::HTTP_OK);
     }
 
     /**
@@ -38,7 +38,7 @@ class WebhookControllerTest extends HttpTestCase
 
         $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
 
-        $this->assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $res->getStatusCode());
+        $res->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -54,7 +54,7 @@ class WebhookControllerTest extends HttpTestCase
 
         $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
 
-        $this->assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $res->getStatusCode());
+        $res->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -68,7 +68,7 @@ class WebhookControllerTest extends HttpTestCase
 
         $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
 
-        $this->assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $res->getStatusCode());
+        $res->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -86,7 +86,7 @@ class WebhookControllerTest extends HttpTestCase
 
         $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
 
-        $this->assertSame(Response::HTTP_OK, $res->getStatusCode());
+        $res->assertStatus(Response::HTTP_OK);
         $this->assertTrue($handler::$called);
     }
 }
