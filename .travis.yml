@@ -1,0 +1,11 @@
+language: php
+
+php:
+  - 7.2.11
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+script:
+  - ./run_tests
