@@ -11,7 +11,7 @@ class Store extends Request
      */
     public function getEventType(): string
     {
-        return $this->getInput('event-type');
+        return $this->input('event-type');
     }
 
     /**
@@ -21,7 +21,7 @@ class Store extends Request
      */
     public function getData(): array
     {
-        return $this->getInput('data');
+        return $this->input('data');
     }
 
     public function rules(): array
