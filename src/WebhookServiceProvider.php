@@ -20,5 +20,9 @@ class WebhookServiceProvider extends ServiceProvider
         $this->app->make('SoapBox\Webhooks\WebhookController');
 
         $this->mergeConfigFrom(__DIR__ . '/../config/signed-requests.php', 'signed-requests');
+
+        $this->app->resolving(Request::class, function ($request, $app) {
+            Request::createFrom($app['request'], $request);
+        });
     }
 }

@@ -4,7 +4,6 @@ namespace Tests;
 
 use Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
-use SoapBox\Webhooks\Request;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\Route;
 use SoapBox\SignedRequests\Signature;
@@ -42,10 +41,6 @@ class HttpTestCase extends BaseTestCase
         ]);
 
         Route::aliasMiddleware('verify-signature', VerifySignature::class);
-
-        $app->resolving(Request::class, function ($request, $app) {
-            Request::createFrom($app['request'], $request);
-        });
     }
 
     public function signedJson($method, $uri, array $data = [], array $headers = [], $requestKey = 'default')
