@@ -16,7 +16,8 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
-  - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
+  - composer require "illuminate/http:${ILLUMINATE_VERSION}" --no-update
+  - composer require "illuminate/validation:${ILLUMINATE_VERSION}" --no-update
 
 before_script:
   - composer update --prefer-source --no-interaction
