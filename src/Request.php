@@ -13,45 +13,13 @@ abstract class Request extends IlluminateRequest implements ValidatesWhenResolve
     use ValidatesWhenResolvedTrait;
 
     /**
-     * @var array
-     */
-    private $input;
-
-    /**
-     * Default Request constructor
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->input = $this->json()->all();
-    }
-
-    /**
      * Create a Validator for the Request
      *
      * @return \Illuminate\Validation\Validator
      */
     protected function validator(): IlluminateValidator
     {
-        return Validator::make($this->input, $this->rules());
-    }
-
-    /**
-     * Return the value from the request input if it exists
-     *
-     * @param string $key
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     */
-    protected function getInput(string $key, $default = null)
-    {
-        if (array_key_exists($key, $this->input)) {
-            return $this->input[$key];
-        }
-
-        return $default;
+        return Validator::make($this->input(), $this->rules());
     }
 
     /**
