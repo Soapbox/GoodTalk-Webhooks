@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Handlers;
+namespace Tests\Doubles\Handlers;
 
 use SoapBox\Webhooks\Store;
 use SoapBox\Webhooks\WebhookHandler;

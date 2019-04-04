@@ -4,7 +4,10 @@ namespace Tests\Funcitonal;
 
 use Tests\HttpTestCase;
 use Illuminate\Http\Response;
-use Tests\Handlers\ValidHandler;
+use Tests\Doubles\Handlers\ValidHandler;
+use Tests\Doubles\Handlers\MethodDependencyHandler;
+use Tests\Doubles\Handlers\DependencyInjectedHandler;
+use Tests\Doubles\Handlers\ConstructorDependencyHandler;
 
 class WebhookControllerTest extends HttpTestCase
 {
@@ -88,5 +91,24 @@ class WebhookControllerTest extends HttpTestCase
 
         $res->assertStatus(Response::HTTP_OK);
         $this->assertTrue($handler::$called);
+    }
+
+    /**
+     * @test
+     */
+    public function it_will_resolve_constructor_dependencies_for_the_handler()
+    {
+        $data = [
+            'event-type' => 'constructor.dependency.handler',
+            'data' => [
+                'id' => 1
+            ]
+        ];
+
+        $this->withoutExceptionHandling();
+        $res = $this->signedJson('POST', '/webhook', $data, [], 'webhooks');
+
+        $res->assertStatus(Response::HTTP_OK);
+        $this->assertTrue(ConstructorDependencyHandler::$called);
     }
 }

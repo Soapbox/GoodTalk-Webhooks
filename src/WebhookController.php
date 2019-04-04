@@ -3,21 +3,22 @@
 namespace SoapBox\Webhooks;
 
 use Illuminate\Http\Response;
+use Illuminate\Contracts\Container\Container;
 
 class WebhookController
 {
     /**
      * Handle a webhook request from the API
      *
-     * @param Store $request
+     * @param \SoapBox\Webhooks\Store $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function handle(Store $request): Response
+    public function handle(Store $request, Container $container): Response
     {
         $class = $this->getClass($request);
 
-        if (class_exists($class) && ($handler = new $class) instanceof WebhookHandler) {
+        if (class_exists($class) && ($handler = $container->make($class)) instanceof WebhookHandler) {
             $handler->handle($request);
         }
 
@@ -27,7 +28,7 @@ class WebhookController
     /**
      * Get the namespace for the class that should handle the request
      *
-     * @param Store $request
+     * @param \SoapBox\Webhooks\Store $request
      *
      * @return string
      */
