@@ -2,6 +2,7 @@
 
 namespace SoapBox\Webhooks;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Response;
 
 class WebhookController
@@ -33,6 +34,6 @@ class WebhookController
      */
     private function getClass(Store $request): string
     {
-        return config('webhooks.handler_namespace') . "\\" . studly_case(str_replace('.', '_', $request->getEventType()));
+        return config('webhooks.handler_namespace') . "\\" . Str::studly(str_replace('.', '_', $request->getEventType()));
     }
 }
